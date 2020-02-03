@@ -47,8 +47,6 @@ public class arrayWithRandomValues {
                 if (array[i] > max)
                     max = array[i];
             }
-
-
             System.out.println("Maximum value : " + max);
             return max;
         }
@@ -67,9 +65,5 @@ public class arrayWithRandomValues {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i] + " ");
         }return array;
-
-
-
-    }}
-
-
+    }
+}
