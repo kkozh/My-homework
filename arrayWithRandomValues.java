@@ -1,10 +1,10 @@
-public class arrayWithRandomValues {
+public class ArrayWithRandomValues {
     public static void main(String[] args){
         int []array = array();
-        average(array);
-        min(array);
-        max(array);
-        bubble(array);
+        getArrayAverage(array);
+        getArrayMin(array);
+        getArrayMax(array);
+        bubbleSorting(array);
 
     }
 
@@ -19,19 +19,20 @@ public class arrayWithRandomValues {
         return array;
     }
 
-        public static double average(int []array){
+        public static double getArrayAverage(int[] array) {
 
-            double average = array[0];
-            for (int i = 0; i < array.length; i++) {
+        double average = array[0];
+        for (int i = 0; i < array.length; i++) {
             average += array[i];
         }
-        average /= 10;
+        average = average / array.length;
+
         System.out.println("Mean : " + average);
-        return 0;
-        }
+        return average;
+    }
 
 
-        public static int min(int[] array) {
+        public static int getArrayMin(int[] array) {
             int min = array[0];
             for (int i = 1; i < array.length; i++) {
                 if (array[i] < min)
@@ -41,7 +42,7 @@ public class arrayWithRandomValues {
             return min;
         }
 
-        public static int max(int[] array) {
+        public static int getArrayMax(int[] array) {
             int max = array[0];
             for (int i = 0; i < array.length; i++) {
                 if (array[i] > max)
@@ -51,19 +52,20 @@ public class arrayWithRandomValues {
             return max;
         }
 
-    public static int[] bubble(int[] array){
+    public static int[] bubbleSorting(int[] array){
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
 
                 if (array[j] > array[j + 1]) {
-                    int b = array[j];
+                    int temp = array[j];
                     array[j] = array[j + 1];
-                    array[j + 1] = b;
+                    array[j + 1] = temp;
                 }
             }
         }
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i] + " ");
-        }return array;
+        }
+        return array;
     }
 }
